@@ -1,93 +1,250 @@
 <!doctype html>
-<h3>Design Systems</h3>
-<p style="color:var(--muted);">Reusable components, accessible tokens, and a visual language that scales.</p>
-</div>
-<div class="service">
-<h3>Web & Mobile Apps</h3>
-<p style="color:var(--muted);">Fast, tested front-ends and resilient backends — deployed with CI/CD best practices.</p>
-</div>
-<div class="service">
-<h3>Product Strategy</h3>
-<p style="color:var(--muted);">Roadmaps, research, and experiments that reduce risk and increase impact.</p>
-</div>
-</div>
-</section>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Expert Pro — Professional Portfolio & Services</title>
+  <meta name="description" content="Sleek, high-end one-page professional website with modern layout and premium feel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0a0a0f; /* deep black */
+      --card:#12121a;
+      --muted:#9ca3af;
+      --accent:#2563eb; /* royal blue */
+      --accent2:#14b8a6; /* teal */
+      --glass: rgba(255,255,255,0.04);
+      --radius:18px;
+      font-family: 'Inter', system-ui, sans-serif;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:linear-gradient(180deg,var(--bg),#05050a 120%); color:#f1f5f9; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; line-height:1.6;
+    }
+    .container{max-width:1180px;margin:0 auto;padding:32px}
 
+    /* NAV */
+    header{backdrop-filter: blur(10px); background:linear-gradient(180deg, rgba(255,255,255,0.04), transparent); border-radius:14px; padding:18px; margin-top:16px;box-shadow:0 6px 20px rgba(0,0,0,0.5)}
+    nav{display:flex;align-items:center;gap:22px;justify-content:space-between}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;color:white;box-shadow:0 4px 14px rgba(37,99,235,0.4)}
+    .nav-links{display:flex;gap:18px}
+    .nav-links a{color:var(--muted);text-decoration:none;font-weight:600;transition:color .3s}
+    .nav-links a:hover{color:white}
+    .cta{padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent),var(--accent2));box-shadow:0 6px 22px rgba(37,99,235,0.25);text-decoration:none;color:white;font-weight:700;transition:transform .2s}
+    .cta:hover{transform:translateY(-2px)}
 
-<section id="projects" class="fade-in">
-<h2>Selected Projects</h2>
-<div class="projects">
-<div class="project">
-<div style="display:flex;justify-content:space-between;align-items:center">
-<h4>FinTrack</h4>
-<span class="badge">SaaS</span>
-</div>
-<p style="color:var(--muted);margin-top:8px">Analytics dashboard for small businesses — improved onboarding conversion by 26%.</p>
-</div>
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;margin-top:40px}
+    .hero-left h1{font-size:46px;margin:0 0 12px 0;font-family:'Playfair Display',serif;line-height:1.2}
+    .hero-left p{color:var(--muted);margin:0 0 20px;font-size:18px}
+    .features{display:flex;gap:14px;margin-top:20px;flex-wrap:wrap}
+    .chip{background:var(--glass);padding:10px 14px;border-radius:14px;font-weight:600;font-size:14px;border:1px solid rgba(255,255,255,0.06)}
 
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015)); border-radius:var(--radius); padding:22px;box-shadow:0 8px 24px rgba(0,0,0,0.6)}
+    .profile{display:flex;gap:16px;align-items:center}
+    .avatar{width:80px;height:80px;border-radius:14px;background:linear-gradient(180deg,#1e1e28,#101018);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:20px;color:var(--accent)}
+    .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .stat{background:rgba(255,255,255,0.03);padding:14px;border-radius:12px;text-align:center}
+    .stat h3{margin:0;font-size:20px;color:white}
+    .stat p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
 
-<div class="project">
-<div style="display:flex;justify-content:space-between;align-items:center">
-<h4>PulseFit</h4>
-<span class="badge">Mobile</span>
-</div>
-<p style="color:var(--muted);margin-top:8px">Fitness tracking app with delightful micro-interactions and energy-efficient sync.</p>
-</div>
+    /* SECTIONS */
+    section{margin-top:44px}
+    h2{margin:0 0 14px 0;font-size:28px;font-weight:700}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service{padding:20px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);min-height:140px;transition:transform .2s}
+    .service:hover{transform:translateY(-4px)}
 
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{border-radius:14px;padding:16px;background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.015));min-height:180px;transition:transform .2s}
+    .project:hover{transform:translateY(-3px)}
+    .project h4{margin:0;font-size:18px}
+    .badge{display:inline-block;padding:6px 10px;border-radius:12px;background:rgba(255,255,255,0.04);font-weight:700;font-size:12px;color:var(--accent)}
 
-<div class="project">
-<div style="display:flex;justify-content:space-between;align-items:center">
-<h4>ShopWave</h4>
-<span class="badge">E‑commerce</span>
-</div>
-<p style="color:var(--muted);margin-top:8px">Custom storefront and checkout flow, decreased abandoned carts by 18%.</p>
-</div>
-</div>
-</section>
+    /* CTA BAR */
+    .cta-bar{margin-top:32px;padding:20px;border-radius:14px;background:linear-gradient(90deg, rgba(37,99,235,0.15), rgba(20,184,166,0.08));display:flex;align-items:center;justify-content:space-between}
 
+    /* FOOTER */
+    footer{margin-top:48px;padding:22px;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid rgba(255,255,255,0.06)}
 
-<section id="about" class="fade-in">
-<h2>About</h2>
-<p style="color:var(--muted)">I combine product design and engineering to ship high-quality, maintainable products. I care about accessibility, performance, and clear communication with stakeholders.</p>
-</section>
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .projects, .grid-3{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .nav-links{display:none}
+      .projects, .grid-3{grid-template-columns:1fr}
+      .hero-left h1{font-size:32px}
+    }
 
+    /* small animation */
+    .fade-in{animation:fadeIn 800ms ease both}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="fade-in">
+      <nav>
+        <div class="brand">
+          <div class="logo">EX</div>
+          <div>
+            <div style="font-weight:800">Expert Pro</div>
+            <div style="font-size:13px;color:var(--muted)">Design • Development • Strategy</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a href="#contact" class="cta">Hire Me</a>
+      </nav>
+    </header>
 
-<section id="contact" class="fade-in">
-<h2>Contact</h2>
-<div style="display:grid;grid-template-columns:1fr 340px;gap:18px">
-<form class="card" onsubmit="event.preventDefault(); alert('This form is a demo — replace with your backend endpoint.')">
-<div style="display:flex;gap:8px;margin-bottom:8px">
-<input required placeholder="Your name" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit">
-<input required placeholder="Email" style="width:180px;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit">
-</div>
-<textarea required placeholder="Tell me about your project" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit;min-height:110px"></textarea>
-<div style="display:flex;justify-content:flex-end;margin-top:10px">
-<button class="cta" type="submit">Send message</button>
-</div>
-</form>
+    <main>
+      <section class="hero">
+        <div class="hero-left fade-in">
+          <h1>Crafting premium digital experiences that deliver results.</h1>
+          <p>I specialize in bridging design and engineering — building sleek, high-performing websites and applications that drive growth for modern businesses.</p>
+          <div class="features">
+            <span class="chip">Product Design</span>
+            <span class="chip">Full‑Stack Dev</span>
+            <span class="chip">Business Strategy</span>
+          </div>
 
+          <div class="cta-bar">
+            <div>
+              <strong>Let’s build something impactful.</strong>
+              <div style="color:var(--muted)">Reach out to discuss your vision — free consultation.</div>
+            </div>
+            <div>
+              <a href="#contact" class="cta">Get in touch</a>
+            </div>
+          </div>
+        </div>
 
-<aside class="card">
-<h3>Availability</h3>
-<p style="color:var(--muted)">Typically available for part-time contracts and select full-time roles. Open to remote work worldwide.</p>
-<h3 style="margin-top:12px">Connect</h3>
-<p style="color:var(--muted)">hello@example.com<br>+62 812-3456-7890</p>
-</aside>
-</div>
-</section>
+        <aside class="card fade-in">
+          <div class="profile">
+            <div class="avatar">JD</div>
+            <div>
+              <div style="font-weight:800;font-size:18px">Jordan Doe</div>
+              <div style="color:var(--muted);font-size:14px">Designer & Engineer</div>
+            </div>
+          </div>
 
+          <div class="stat-grid">
+            <div class="stat">
+              <h3>10+</h3>
+              <p>Years Experience</p>
+            </div>
+            <div class="stat">
+              <h3>150+</h3>
+              <p>Projects Delivered</p>
+            </div>
+            <div class="stat">
+              <h3>40%</h3>
+              <p>Avg. Growth Impact</p>
+            </div>
+          </div>
 
-</main>
+          <div style="margin-top:14px;display:flex;gap:10px;">
+            <a class="badge" href="#projects">View Portfolio</a>
+            <a class="badge" href="#contact">Work With Me</a>
+          </div>
+        </aside>
+      </section>
 
+      <section id="services" class="fade-in">
+        <h2>Services</h2>
+        <div class="grid-3">
+          <div class="service">
+            <h3>Design Systems</h3>
+            <p style="color:var(--muted);">Scalable design languages, consistent UI kits, and pixel-perfect components.</p>
+          </div>
+          <div class="service">
+            <h3>Applications</h3>
+            <p style="color:var(--muted);">Robust web & mobile apps, engineered for speed, security, and seamless UX.</p>
+          </div>
+          <div class="service">
+            <h3>Strategy & Growth</h3>
+            <p style="color:var(--muted);">Market insights, product roadmaps, and data-driven growth frameworks.</p>
+          </div>
+        </div>
+      </section>
 
-<footer>
-<div>© <span id="year"></span> Expert — Built with care. All rights reserved.</div>
-</footer>
-</div>
+      <section id="projects" class="fade-in">
+        <h2>Selected Projects</h2>
+        <div class="projects">
+          <div class="project">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h4>FinEdge</h4>
+              <span class="badge">Finance SaaS</span>
+            </div>
+            <p style="color:var(--muted);margin-top:10px">A next‑gen financial platform — boosted retention by 33% through design + UX optimizations.</p>
+          </div>
 
+          <div class="project">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h4>PulseX</h4>
+              <span class="badge">Health Tech</span>
+            </div>
+            <p style="color:var(--muted);margin-top:10px">Wearable companion app with real‑time analytics — awarded Top Innovation 2024.</p>
+          </div>
 
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+          <div class="project">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <h4>ShopVerse</h4>
+              <span class="badge">E‑Commerce</span>
+            </div>
+            <p style="color:var(--muted);margin-top:10px">Custom storefront and checkout experience — reduced cart abandonment by 22%.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="fade-in">
+        <h2>About</h2>
+        <p style="color:var(--muted)">With a background in both product design and software engineering, I deliver solutions that are as elegant as they are functional. I value clarity, speed, and meaningful impact in every project.</p>
+      </section>
+
+      <section id="contact" class="fade-in">
+        <h2>Contact</h2>
+        <div style="display:grid;grid-template-columns:1fr 360px;gap:20px">
+          <form class="card" onsubmit="event.preventDefault(); alert('Demo only — connect to backend to enable messaging.')">
+            <div style="display:flex;gap:10px;margin-bottom:10px">
+              <input required placeholder="Your name" style="flex:1;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit">
+              <input required placeholder="Email" style="width:200px;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit">
+            </div>
+            <textarea required placeholder="Tell me about your project" style="width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit;min-height:120px"></textarea>
+            <div style="display:flex;justify-content:flex-end;margin-top:12px">
+              <button class="cta" type="submit">Send Message</button>
+            </div>
+          </form>
+
+          <aside class="card">
+            <h3>Availability</h3>
+            <p style="color:var(--muted)">Open for select collaborations, consulting, and fractional product leadership. Remote worldwide.</p>
+            <h3 style="margin-top:14px">Connect</h3>
+            <p style="color:var(--muted)">hello@example.com<br>+62 812-3456-7890</p>
+          </aside>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Expert Pro — Crafted with precision. All rights reserved.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
