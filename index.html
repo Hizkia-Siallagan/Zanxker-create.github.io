@@ -1,15 +1,93 @@
-<!DOCTYPE html>
-<html>
- <head>
-   <title>My Website</title>
-  <style>
-   body {
-    background-color: aqua;
-    font-family: senserif;
-   }
-  </style>
- </head>
-  <body>
-    <h1>This Is My Website</h1>
-  </body>
+<!doctype html>
+<h3>Design Systems</h3>
+<p style="color:var(--muted);">Reusable components, accessible tokens, and a visual language that scales.</p>
+</div>
+<div class="service">
+<h3>Web & Mobile Apps</h3>
+<p style="color:var(--muted);">Fast, tested front-ends and resilient backends — deployed with CI/CD best practices.</p>
+</div>
+<div class="service">
+<h3>Product Strategy</h3>
+<p style="color:var(--muted);">Roadmaps, research, and experiments that reduce risk and increase impact.</p>
+</div>
+</div>
+</section>
+
+
+<section id="projects" class="fade-in">
+<h2>Selected Projects</h2>
+<div class="projects">
+<div class="project">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<h4>FinTrack</h4>
+<span class="badge">SaaS</span>
+</div>
+<p style="color:var(--muted);margin-top:8px">Analytics dashboard for small businesses — improved onboarding conversion by 26%.</p>
+</div>
+
+
+<div class="project">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<h4>PulseFit</h4>
+<span class="badge">Mobile</span>
+</div>
+<p style="color:var(--muted);margin-top:8px">Fitness tracking app with delightful micro-interactions and energy-efficient sync.</p>
+</div>
+
+
+<div class="project">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<h4>ShopWave</h4>
+<span class="badge">E‑commerce</span>
+</div>
+<p style="color:var(--muted);margin-top:8px">Custom storefront and checkout flow, decreased abandoned carts by 18%.</p>
+</div>
+</div>
+</section>
+
+
+<section id="about" class="fade-in">
+<h2>About</h2>
+<p style="color:var(--muted)">I combine product design and engineering to ship high-quality, maintainable products. I care about accessibility, performance, and clear communication with stakeholders.</p>
+</section>
+
+
+<section id="contact" class="fade-in">
+<h2>Contact</h2>
+<div style="display:grid;grid-template-columns:1fr 340px;gap:18px">
+<form class="card" onsubmit="event.preventDefault(); alert('This form is a demo — replace with your backend endpoint.')">
+<div style="display:flex;gap:8px;margin-bottom:8px">
+<input required placeholder="Your name" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit">
+<input required placeholder="Email" style="width:180px;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit">
+</div>
+<textarea required placeholder="Tell me about your project" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit;min-height:110px"></textarea>
+<div style="display:flex;justify-content:flex-end;margin-top:10px">
+<button class="cta" type="submit">Send message</button>
+</div>
+</form>
+
+
+<aside class="card">
+<h3>Availability</h3>
+<p style="color:var(--muted)">Typically available for part-time contracts and select full-time roles. Open to remote work worldwide.</p>
+<h3 style="margin-top:12px">Connect</h3>
+<p style="color:var(--muted)">hello@example.com<br>+62 812-3456-7890</p>
+</aside>
+</div>
+</section>
+
+
+</main>
+
+
+<footer>
+<div>© <span id="year"></span> Expert — Built with care. All rights reserved.</div>
+</footer>
+</div>
+
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
 </html>
